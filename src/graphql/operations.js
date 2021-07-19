@@ -1,10 +1,21 @@
 import { gql } from '@apollo/client';
 
-export const GET_EXCHANGE_RATES = gql`
-  query GetExchangeRates {
-    rates(currency: "USD") {
-      currency
-      rate
+export const GET_REPOSITORIES = gql`
+query GetRepositories { 
+  viewer { 
+    repositories(first: 100,orderBy: {field: UPDATED_AT, direction: DESC} ){
+      nodes {
+          name
+        	description
+        	repositoryTopics(first:10){
+            nodes {
+              topic{
+                name
+              }
+            }
+          }
+          }
+        }
+      }
     }
-  }
 `;

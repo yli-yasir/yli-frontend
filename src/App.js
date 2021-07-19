@@ -1,15 +1,15 @@
 import { useQuery } from '@apollo/client';
-import { GET_EXCHANGE_RATES } from './graphql/operations';
+import { GET_REPOSITORIES } from './graphql/operations';
 
 function App() {
-  const { loading, error, data } = useQuery(GET_EXCHANGE_RATES);
+  const { loading, error, data } = useQuery(GET_REPOSITORIES);
 
   return (
     <>
-      {data && data.rates.map(({ currency, rate }) => (
-        <div key={currency}>
+      {data && data.viewer.repositories.nodes.map(({ name }) => (
+        <div key={name}>
           <p>
-            {currency}: {rate}
+            {name}
           </p>
         </div>
       ))}

@@ -1,14 +1,17 @@
 import styled from 'styled-components';
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
+import {css} from 'styled-components';
+
+const borders = css`border: 2px solid ${({ theme }) => theme.mode === 'light' ? 'black' : 'white'};`
 
 const StyledCard = styled.div`
-border: 2px solid black;
+${borders}
 padding: 8px;
 font-family: 'Press Start 2P', monospace;
 `;
 
 const Topic = styled.span`
-border: 2px solid black;
+${borders}
 padding:4px;
 margin:4px;
 display: inline-block;
@@ -25,7 +28,7 @@ function Card(props) {
     return <StyledCard className={props.className}>
         <h3>{props.title}</h3>
         <p>{props.description}</p>
-        {props.topics?.map((topic)=><Topic>{topic}</Topic>)}
+        {props.topics?.map((topic) => <Topic>{topic}</Topic>)}
         <Date>{props.date}</Date>
     </StyledCard>
 }

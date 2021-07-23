@@ -7,9 +7,9 @@ export default {
 
 const Template = (args) => <Card {...args}/>;
 
-export const Light = Template.bind({});
+export const Main = Template.bind({});
 
-Light.args = {
+Main.args = {
     title: "timetable-assistant",
     description:"This is a program built with java",
     topics: ["Java","JavaFx","MVC"],

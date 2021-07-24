@@ -1,13 +1,13 @@
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import {css} from 'styled-components';
-
-const borders = css`border: 2px solid ${({ theme }) => theme.mode === 'light' ? 'black' : 'white'};`
+import {getRepoTitle} from '../../utills';
+const borders = css`border: 2px solid ${({ theme }) => theme.mode === 'dark' ? 'white' : 'black'};`
 
 const StyledCard = styled.div`
 ${borders}
 padding: 8px;
-font-family: 'Press Start 2P', monospace;
+margin: 8px;
 `;
 
 const Topic = styled.span`
@@ -17,7 +17,7 @@ margin:4px;
 display: inline-block;
 `;
 
-const Date = styled.span`
+const DateContainer = styled.span`
 display:block;
 width:200px;
 text-align: right;
@@ -26,18 +26,18 @@ margin-left: auto;
 
 function Card(props) {
     return <StyledCard className={props.className}>
-        <h3>{props.title}</h3>
+        <h3>{getRepoTitle(props.title)}</h3>
         <p>{props.description}</p>
-        {props.topics?.map((topic) => <Topic>{topic}</Topic>)}
-        <Date>{props.date}</Date>
+        {props.topics?.map((topic) => <Topic key={topic}>{topic}</Topic>)}
+        <DateContainer>{props.date?.toLocaleString()}</DateContainer>
     </StyledCard>
 }
 
 Card.propTypes = {
     title: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired,
+    description: PropTypes.string,
     topics: PropTypes.arrayOf(PropTypes.string),
-    date: PropTypes.string.isRequired,
+    date: PropTypes.instanceOf(Date),
 };
 
 export default Card;

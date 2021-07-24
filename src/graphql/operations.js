@@ -7,6 +7,7 @@ query GetRepositories {
       nodes {
           name
         	description
+          updatedAt
         	repositoryTopics(first:10){
             nodes {
               topic{

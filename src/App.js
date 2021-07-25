@@ -1,32 +1,22 @@
-import { useQuery } from "@apollo/client";
-import Card from "./components/Card";
-import { GET_REPOSITORIES } from "./graphql/operations";
-import GlobalStyle from "./globalStyle";
-import Page from "./components/Page";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
+import GlobalStyle from './globalStyle';
+
+import Home from './pages/Home';
+import ProjectDetails from './pages/ProjectDetails';
+
 function App() {
-  const { loading, error, data } = useQuery(GET_REPOSITORIES);
-
-  const repos = data?.viewer.repositories.nodes;
-
   return (
-    <Page>
-      <GlobalStyle></GlobalStyle>
-      {repos &&
-        
-        repos.map((repo) => {
-          const topics = repo.repositoryTopics.nodes.map(({topic})=>topic.name); 
-          return (
-            <Card
-              key={repo.name}
-              title={repo.name}
-              description={repo.description}
-              date={new Date(repo.updatedAt)}
-              topics={topics}
-              
-            />
-          );
-        })}
-    </Page>
+    <Router>
+      <GlobalStyle />
+      <Switch>
+        <Route path="/projects/:id" component={ProjectDetails} />
+        <Route path="/" component={Home} />
+      </Switch>
+    </Router>
   );
 }
 

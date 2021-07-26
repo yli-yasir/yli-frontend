@@ -1,6 +1,7 @@
+import Header from "../Header";
 import styled from "styled-components";
 
-const Page = styled.div`
+const StyledPage = styled.div`
   margin: auto;
   display: flex;
   flex-direction: column;
@@ -17,4 +18,10 @@ const Page = styled.div`
   }
 `;
 
-export default Page;
+export default function Page({children}){
+  return <StyledPage>
+    <Header/>
+    {children}
+  </StyledPage>
+
+}

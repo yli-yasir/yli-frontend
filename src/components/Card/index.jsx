@@ -2,7 +2,10 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import {css} from 'styled-components';
 import {getRepoTitle} from '../../utills';
-const borders = css`border: 2px solid ${({ theme }) => theme.mode === 'dark' ? 'white' : 'black'};`
+const borders = css`
+border: 2px solid ${({ theme }) => theme.mode === 'dark' ? 'white' : 'black'};
+border-radius: 8px;
+`
 
 const StyledCard = styled.div`
 ${borders}

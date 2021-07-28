@@ -4,6 +4,8 @@ import Page from "../Page";
 import { useQuery } from "@apollo/client";
 import { CSSTransition, TransitionGroup } from "react-transition-group";
 import Zoom from "../Zoom";
+import { Link } from "react-router-dom";
+import { makeProjectLink } from "../../utills";
 
 export default function RepoList() {
   const { loading, error, data } = useQuery(GET_REPOSITORIES);
@@ -11,22 +13,24 @@ export default function RepoList() {
   const repos = data?.viewer.repositories.nodes;
 
   return (
-      <TransitionGroup>
-        {repos &&
-          repos.map((repo) => {
-            const topics = repo.repositoryTopics.nodes.map(({ topic }) => topic.name);
-            return (
-                <Zoom timeout={500} key={repo.name}>
-                <Card
-                  title={repo.name}
-                  description={repo.description}
-                  date={new Date(repo.updatedAt)}
-                  topics={topics}
-
-                />
-                </Zoom>
-            );
-          })}
-      </TransitionGroup>
+    <TransitionGroup>
+      {repos &&
+        repos.map((repo) => {
+          const topics = repo.repositoryTopics.nodes.map(
+            ({ topic }) => topic.name
+          );
+          return (
+            <Zoom timeout={500} key={repo.name}>
+              <Card
+                title={repo.name}
+                link={makeProjectLink(repo.name,repo.defaultBranchRef.name)}
+                description={repo.description}
+                date={new Date(repo.updatedAt)}
+                topics={topics}
+              />
+            </Zoom>
+          );
+        })}
+    </TransitionGroup>
   );
 }

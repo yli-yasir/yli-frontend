@@ -18,7 +18,7 @@ function App() {
       <ThemeProvider theme={{setThemeName,...themes[themeName]}}>
       <GlobalStyle />
       <Switch>
-        <Route path="/projects/:id" component={ProjectDetails} />
+        <Route path="/projects/:repoName/:defaultBranch" component={ProjectDetails} />
         <Route path="/" component={Home} />
       </Switch>
       </ThemeProvider>

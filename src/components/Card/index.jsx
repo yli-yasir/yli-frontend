@@ -2,6 +2,8 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import {css} from 'styled-components';
 import {getRepoTitle} from '../../utills';
+import { Link } from 'react-router-dom';
+import Anchor from '../Anchor'
 const borders = css`
 border: 2px solid ${({ theme }) => theme.mode === 'dark' ? 'white' : 'black'};
 border-radius: 8px;
@@ -13,7 +15,8 @@ padding: 8px;
 margin: 8px;
 `;
 
-const Topic = styled.span`
+
+const TopicContainer = styled.span`
 ${borders}
 padding:4px;
 margin:4px;
@@ -29,9 +32,10 @@ margin-left: auto;
 
 function Card(props) {
     return <StyledCard className={props.className}>
-        <h3>{getRepoTitle(props.title)}</h3>
+        <Link to={props.link}>a</Link>
+        <Link to={props.link} component={Anchor}><h3>{getRepoTitle(props.title)}</h3></Link>
         <p>{props.description}</p>
-        {props.topics?.map((topic) => <Topic key={topic}>{topic}</Topic>)}
+        {props.topics?.map((topic) => <TopicContainer key={topic}>{topic}</TopicContainer>)}
         <DateContainer>{props.date?.toLocaleString()}</DateContainer>
     </StyledCard>
 }

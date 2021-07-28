@@ -33,6 +33,7 @@ export default function Zoom(props) {
       classNames="zoom"
       appear={true}
       timeout={timeout}
+      
       unmountOnExit
       {...otherProps}
     >

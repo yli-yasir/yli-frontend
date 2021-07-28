@@ -8,6 +8,9 @@ query GetRepositories {
           name
         	description
           updatedAt
+          defaultBranchRef {
+            name
+          }
         	repositoryTopics(first:10){
             nodes {
               topic{

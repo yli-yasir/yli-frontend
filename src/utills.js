@@ -3,8 +3,7 @@ export const getRepoTitle = (kebabCaseTitle) =>
     .replaceAll("-", " ")
     .replaceAll(/\b(\w)/g, (_, firstLetter) => firstLetter.toUpperCase());
 
-export const makeProjectLink = (repoName, defaultBranch) => `
-projects/${repoName}/${defaultBranch}`;
+export const makeProjectLink = (repoName, defaultBranch) => `/projects/${repoName}/${defaultBranch}`;
 
 
 export const getREADMELink = (repoName, defaultBranch) => `

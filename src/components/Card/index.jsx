@@ -30,10 +30,10 @@ text-align: right;
 margin-left: auto;
 `;
 
-function Card(props) {
+function Card(props) {    
+
     return <StyledCard className={props.className}>
-        <Link to={props.link}>a</Link>
-        <Link to={props.link} component={Anchor}><h3>{getRepoTitle(props.title)}</h3></Link>
+        <Link to={props.link}><h3>{getRepoTitle(props.title)}</h3></Link>
         <p>{props.description}</p>
         {props.topics?.map((topic) => <TopicContainer key={topic}>{topic}</TopicContainer>)}
         <DateContainer>{props.date?.toLocaleString()}</DateContainer>

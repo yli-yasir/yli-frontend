@@ -4,9 +4,12 @@ const GlobalStyle = createGlobalStyle`
 body{
 color: ${({ theme }) => (theme?.mode === "dark" ? "white" : "black")};
 background-color: ${({ theme }) => (theme?.mode === "dark" ? "black" : "white")};
-
 font-family:'Quicksand', sans-serif;
 }
+a {
+  color:inherit;
+}
+
 `;
 
 export default GlobalStyle;

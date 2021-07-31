@@ -6,6 +6,9 @@ import { CSSTransition, TransitionGroup } from "react-transition-group";
 import Zoom from "../Zoom";
 import { Link } from "react-router-dom";
 import { makeProjectLink } from "../../utills";
+import styled from "styled-components";
+import LoadingPresenter from "../LoadingPresenter";
+
 
 export default function RepoList() {
   const { loading, error, data } = useQuery(GET_REPOSITORIES);
@@ -13,17 +16,18 @@ export default function RepoList() {
   const repos = data?.viewer.repositories.nodes;
 
   return (
-    <TransitionGroup>
+    <LoadingPresenter loading={loading} error={error}>
+    <TransitionGroup appear={true}>
       {repos &&
-        repos.map((repo) => {
+        repos.map((repo,index) => {
           const topics = repo.repositoryTopics.nodes.map(
             ({ topic }) => topic.name
           );
           return (
-            <Zoom timeout={500} key={repo.name}>
+            <Zoom timeout={(index+1)*500} key={repo.name}>
               <Card
                 title={repo.name}
-                link={makeProjectLink(repo.name,repo.defaultBranchRef.name)}
+                link={makeProjectLink(repo.name, repo.defaultBranchRef.name)}
                 description={repo.description}
                 date={new Date(repo.updatedAt)}
                 topics={topics}
@@ -32,5 +36,6 @@ export default function RepoList() {
           );
         })}
     </TransitionGroup>
+    </LoadingPresenter>
   );
 }

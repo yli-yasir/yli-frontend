@@ -11,11 +11,11 @@ import ProjectDetails from './pages/ProjectDetails';
 
 function App() {
 
-  const [themeName,setThemeName] = useState('dark');
+  const [themeKey,setThemeKey] = useState('dark');
 
   return (
     <Router>
-      <ThemeProvider theme={{setThemeName,...themes[themeName]}}>
+      <ThemeProvider theme={{themeKey,setThemeKey,...themes[themeKey]}}>
       <GlobalStyle />
       <Switch>
         <Route path="/projects/:repoName/:defaultBranch" component={ProjectDetails} />

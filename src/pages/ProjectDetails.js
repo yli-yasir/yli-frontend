@@ -4,7 +4,7 @@ import { useAsync } from "react-use";
 import styled from "styled-components";
 import useSearchParams from "../hooks/useSeachParams";
 import { useParams } from "react-router-dom";
-import { getREADMELink } from "../utills";
+import { getREADMELink, replaceRelativeLinks } from "../utills";
 import LoadingPresenter from "../components/LoadingPresenter";
 const ContentContainer = styled.div`
   & img {
@@ -17,8 +17,8 @@ export default function ProjectDetails(props) {
 
   const { value, loading, error } = useAsync(async () => {
     const response = await fetch(getREADMELink(repoName, defaultBranch));
-    const result = await response.text();
-    return result;
+    let markdown = await response.text();
+    return replaceRelativeLinks(repoName,defaultBranch,markdown)
   });
 
   return (

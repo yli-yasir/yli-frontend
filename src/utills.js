@@ -11,7 +11,6 @@ export const getREADMELink = (repoName, defaultBranch) =>
 
 export const replaceRelativeLinks = (repoName, defaultBranch, markdown) => {
   const replaced = markdown.replace(/src="(\/.+?)"/g, (_, relativeSrc) => {
-    console.log(_);
     return `src="https://raw.githubusercontent.com/yli-yasir/${repoName}/${defaultBranch}${relativeSrc}"`;
   });
   return replaced;

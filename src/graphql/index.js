@@ -5,7 +5,7 @@ import {
 
 
 const githubApolloClient = new ApolloClient({
-    uri: 'http://localhost:3000/github/graphql',
+    uri: process.env.REACT_APP_GRAPHQL_ENDPOINT,
     cache: new InMemoryCache()
   });
 

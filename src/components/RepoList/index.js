@@ -1,12 +1,9 @@
 import Card from "../Card";
 import { GET_REPOSITORIES } from "../../graphql/operations";
-import Page from "../Page";
 import { useQuery } from "@apollo/client";
-import { CSSTransition, TransitionGroup } from "react-transition-group";
+import {  TransitionGroup } from "react-transition-group";
 import Zoom from "../Zoom";
-import { Link } from "react-router-dom";
 import { makeProjectLink } from "../../utills";
-import styled from "styled-components";
 import LoadingPresenter from "../LoadingPresenter";
 
 

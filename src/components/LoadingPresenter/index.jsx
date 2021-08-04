@@ -10,7 +10,7 @@ export default function LoadingPresenter({loading,error,children}){
     return (
         <>
         {loading && <StatusIndicator src={loadingImg} alt="loading"/> }
-        {error && <StatusIndicator src={loadingImg} alt="loading"/>}
+        {error && <p>Something went wrong</p>}
         {!loading && !error && children}
         </>
     )

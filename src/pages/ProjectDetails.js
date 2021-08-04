@@ -2,7 +2,6 @@ import Page from "../components/Page";
 import marked from "marked";
 import { useAsync } from "react-use";
 import styled from "styled-components";
-import useSearchParams from "../hooks/useSeachParams";
 import { useParams } from "react-router-dom";
 import { getREADMELink, replaceRelativeLinks } from "../utills";
 import LoadingPresenter from "../components/LoadingPresenter";

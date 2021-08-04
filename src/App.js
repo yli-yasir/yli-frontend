@@ -6,6 +6,7 @@ import {
 } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 import GlobalStyle,{themes} from './globalStyle';
+import About from "./pages/About";
 import Home from './pages/Home';
 import ProjectDetails from './pages/ProjectDetails';
 
@@ -19,6 +20,7 @@ function App() {
       <GlobalStyle />
       <Switch>
         <Route path="/projects/:repoName/:defaultBranch" component={ProjectDetails} />
+        <Route path="/about" component={About} />
         <Route path="/" component={Home} />
       </Switch>
       </ThemeProvider>

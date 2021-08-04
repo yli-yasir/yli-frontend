@@ -3,13 +3,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faSun,
   faQuestionCircle,
-  faStarAndCrescent,
   faMoon,
 } from "@fortawesome/free-solid-svg-icons";
 import { faGithubAlt, faYoutube } from "@fortawesome/free-brands-svg-icons";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { ThemeContext } from "styled-components";
+
 const StyledHeader = styled.div`
   font-family: "Press Start 2P", sans-serif;
   text-align: center;
@@ -33,13 +33,12 @@ export default function Header() {
       <h1>Y-Li</h1>
       <h4>Yasir Al-Baldawi</h4>
       <ActionsContainer>
-
         <a href="https://github.com/yli-yasir">
           <FontAwesomeIcon icon={faGithubAlt} size="2x" />
         </a>
 
         <a href="https://www.youtube.com/channel/UCx_slW-WOgcElccYYJnLt1Q">
-        <FontAwesomeIcon icon={faYoutube} size="2x" />
+          <FontAwesomeIcon icon={faYoutube} size="2x" />
         </a>
 
         <Link to="/about">

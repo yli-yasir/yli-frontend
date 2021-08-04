@@ -12,6 +12,12 @@ const GlobalStyle = createGlobalStyle`
   svg[role="button"] {
     cursor: pointer;
   }
+  p {
+    text-align: justify;
+  }
+  * {
+    box-sizing:border-box;
+  }
 `;
 
 export default GlobalStyle;

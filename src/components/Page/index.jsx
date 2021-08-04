@@ -6,6 +6,7 @@ const StyledPage = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding:8px;
   width: 100%;
   @media (min-width: 600px) {
     width: 80%;

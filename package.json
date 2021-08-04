@@ -1,5 +1,6 @@
 {
   "name": "yli-frontend",
+  "homepage": "https://yli-yasir.github.io/yli-frontend",
   "version": "0.1.0",
   "private": true,
   "dependencies": {

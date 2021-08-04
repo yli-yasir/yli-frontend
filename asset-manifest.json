@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.js": "/static/js/main.2412aa48.chunk.js",
-    "main.js.map": "/static/js/main.2412aa48.chunk.js.map",
-    "runtime-main.js": "/static/js/runtime-main.3badc03f.js",
-    "runtime-main.js.map": "/static/js/runtime-main.3badc03f.js.map",
-    "static/js/2.8bd4671f.chunk.js": "/static/js/2.8bd4671f.chunk.js",
-    "static/js/2.8bd4671f.chunk.js.map": "/static/js/2.8bd4671f.chunk.js.map",
-    "index.html": "/index.html",
-    "static/js/2.8bd4671f.chunk.js.LICENSE.txt": "/static/js/2.8bd4671f.chunk.js.LICENSE.txt",
-    "static/media/loading.b27d0f93.gif": "/static/media/loading.b27d0f93.gif"
+    "main.js": "/yli-frontend/static/js/main.2412aa48.chunk.js",
+    "main.js.map": "/yli-frontend/static/js/main.2412aa48.chunk.js.map",
+    "runtime-main.js": "/yli-frontend/static/js/runtime-main.4224e42e.js",
+    "runtime-main.js.map": "/yli-frontend/static/js/runtime-main.4224e42e.js.map",
+    "static/js/2.30edffb7.chunk.js": "/yli-frontend/static/js/2.30edffb7.chunk.js",
+    "static/js/2.30edffb7.chunk.js.map": "/yli-frontend/static/js/2.30edffb7.chunk.js.map",
+    "index.html": "/yli-frontend/index.html",
+    "static/js/2.30edffb7.chunk.js.LICENSE.txt": "/yli-frontend/static/js/2.30edffb7.chunk.js.LICENSE.txt",
+    "static/media/loading.b27d0f93.gif": "/yli-frontend/static/media/loading.b27d0f93.gif"
   },
   "entrypoints": [
-    "static/js/runtime-main.3badc03f.js",
-    "static/js/2.8bd4671f.chunk.js",
+    "static/js/runtime-main.4224e42e.js",
+    "static/js/2.30edffb7.chunk.js",
     "static/js/main.2412aa48.chunk.js"
   ]
 }

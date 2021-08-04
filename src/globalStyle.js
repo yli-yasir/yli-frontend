@@ -6,6 +6,9 @@ const GlobalStyle = createGlobalStyle`
     background-color: ${({ theme }) => theme.backgroundColor};
     font-family: "Quicksand", sans-serif;
   }
+  * {
+    box-sizing:border-box;
+  }
   a {
     color: inherit;
   }
@@ -15,8 +18,8 @@ const GlobalStyle = createGlobalStyle`
   p {
     text-align: justify;
   }
-  * {
-    box-sizing:border-box;
+  h1 > a {
+    text-decoration:none;
   }
 `;
 

@@ -30,7 +30,7 @@ export default function Header() {
 
   return (
     <StyledHeader>
-      <h1>Y-Li</h1>
+      <h1><Link to="/">Y-Li</Link></h1>
       <h4>Yasir Al-Baldawi</h4>
       <ActionsContainer>
         <a href="https://github.com/yli-yasir">

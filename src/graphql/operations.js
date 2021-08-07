@@ -1,9 +1,9 @@
 import { gql } from '@apollo/client';
 
 export const GET_REPOSITORIES = gql`
-query GetRepositories { 
+query GetRepositories($first: Int!) { 
   viewer { 
-    repositories(first: 100,orderBy: {field: UPDATED_AT, direction: DESC} ){
+    repositories(first: $first,orderBy: {field: UPDATED_AT, direction: DESC} ){
       nodes {
           name
         	description

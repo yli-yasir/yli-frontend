@@ -4,7 +4,6 @@ import {
   faSun,
   faQuestionCircle,
   faMoon,
-  faArrowLeft,
   faArrowAltCircleLeft,
 } from "@fortawesome/free-solid-svg-icons";
 import { faGithubAlt, faYoutube } from "@fortawesome/free-brands-svg-icons";

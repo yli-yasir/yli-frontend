@@ -1,25 +1,35 @@
-import { gql } from '@apollo/client';
+import { gql } from "@apollo/client";
 
 export const GET_REPOSITORIES = gql`
-query GetRepositories($first: Int!) { 
-  viewer { 
-    repositories(first: $first,orderBy: {field: UPDATED_AT, direction: DESC} ){
-      nodes {
-          name
-        	description
-          updatedAt
-          defaultBranchRef {
+  query GetRepositories($first: Int!, $after: String) {
+    viewer {
+      repositories(
+        first: $first
+        orderBy: { field: UPDATED_AT, direction: DESC }
+        after: $after
+      ) {
+        edges {
+          node {
             name
-          }
-        	repositoryTopics(first:10){
-            nodes {
-              topic{
-                name
+            description
+            updatedAt
+            defaultBranchRef {
+              name
+            }
+            repositoryTopics(first: 10) {
+              nodes {
+                topic {
+                  name
+                }
               }
             }
           }
-          }
+        }
+        pageInfo {
+          endCursor
+          hasNextPage
         }
       }
     }
+  }
 `;

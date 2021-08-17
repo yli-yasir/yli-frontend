@@ -11,6 +11,7 @@ export default function RepoList() {
 
   const { loading, error, data, fetchMore } = useQuery(GET_REPOSITORIES, {
     variables: { first: 5 },
+    notifyOnNetworkStatusChange:true
   });
 
   const repos = data?.viewer.repositories.edges.map(edge=>edge.node);
@@ -18,12 +19,14 @@ export default function RepoList() {
   function requestFetchMore(){
     const pageInfo = data?.viewer.repositories.pageInfo;
 
-    if (pageInfo.hasNextPage){
+    if (pageInfo?.hasNextPage){
       fetchMore({
         variables: { after: pageInfo.endCursor,first: 5 },
       })
     }
   }
+
+  console.log(loading);
 
   return (
     <LoadingPresenter loading={loading} error={error}>

@@ -4,10 +4,12 @@ import {
   faSun,
   faQuestionCircle,
   faMoon,
+  faArrowLeft,
+  faArrowAltCircleLeft,
 } from "@fortawesome/free-solid-svg-icons";
 import { faGithubAlt, faYoutube } from "@fortawesome/free-brands-svg-icons";
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { ThemeContext } from "styled-components";
 
 const StyledHeader = styled.div`
@@ -22,6 +24,7 @@ const ActionsContainer = styled.div`
 `;
 export default function Header() {
   const themeContext = useContext(ThemeContext);
+  const history = useHistory();
 
   const toggleTheme = () => {
     const nextThemeKey = themeContext.themeKey === "light" ? "dark" : "light";
@@ -30,9 +33,18 @@ export default function Header() {
 
   return (
     <StyledHeader>
-      <h1><Link to="/">Y-Li</Link></h1>
+      <h1>
+        <Link to="/">Y-Li</Link>
+      </h1>
       <h4>Yasir Al-Baldawi</h4>
       <ActionsContainer>
+        <FontAwesomeIcon
+          role="button"
+          icon={faArrowAltCircleLeft}
+          size="2x"
+          onClick={() => history.goBack()}
+        />
+
         <a href="https://github.com/yli-yasir">
           <FontAwesomeIcon icon={faGithubAlt} size="2x" />
         </a>

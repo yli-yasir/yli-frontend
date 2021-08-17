@@ -1,7 +1,12 @@
-export const getRepoTitle = (kebabCaseTitle) =>
-  kebabCaseTitle
+export const getRepoTitle = (kebabCaseTitle) => {
+  if (kebabCaseTitle === process.env.REACT_APP_HOME_ADDRESS) {
+    return kebabCaseTitle;
+  }
+
+  return kebabCaseTitle
     .replaceAll("-", " ")
     .replaceAll(/\b(\w)/g, (_, firstLetter) => firstLetter.toUpperCase());
+};
 
 export const makeProjectLink = (repoName, defaultBranch) =>
   `/projects/${repoName}/${defaultBranch}`;

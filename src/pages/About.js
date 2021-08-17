@@ -7,8 +7,8 @@ export default function About() {
       <p>
         I develop software applications using modern technologies. My journey
         started out with Java and Android development then slowly transitioned
-        into web development. Although, I mainly use and love certain
-        technologies. I am still a firm believer in "using the right tool for
+        into web development. Although I mainly use and love certain
+        technologies, I am still a firm believer in "using the right tool for
         the right job", so I always expand my toolset when needed.
       </p>
 

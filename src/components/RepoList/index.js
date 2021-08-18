@@ -53,7 +53,7 @@ export default function RepoList() {
         </TransitionGroup>
       </LoadingPresenter>
       <div ref={ref}></div>
-      {!loading && inView && pageInfo.hasNextPage && requestFetchMore()}
+      {!loading && inView && pageInfo?.hasNextPage && requestFetchMore()}
     </>
   );
 }

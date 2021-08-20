@@ -1,13 +1,9 @@
 import styled from "styled-components";
 import PropTypes from "prop-types";
-import { css } from "styled-components";
 import { getRepoTitle } from "../../utills";
 import { Link } from "react-router-dom";
+import {borders} from '../../globalStyle';
 
-const borders = css`
-  border: 2px solid ${({ theme }) => theme.textColor};
-  border-radius: 8px;
-`;
 
 const StyledCard = styled.div`
   ${borders}
